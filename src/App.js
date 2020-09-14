@@ -1,8 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { withAuthenticator } from "aws-amplify-react";
+import gql from "graphql-tag";
+import { listUsers } from "./graphql/queries";
+import logo from "./logo.svg";
+import "./App.css";
+
+import { useQuery } from "@apollo/react-hooks";
 
 function App() {
+  const { data, loading, error } = useQuery(gql(listUsers));
+
+  if (loading) {
+    console.log("loading");
+    console.log(loading);
+  }
+
+  if (error) {
+    console.log("error");
+    console.log(error);
+    return null;
+  }
+
+  console.log(data);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -23,4 +43,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
