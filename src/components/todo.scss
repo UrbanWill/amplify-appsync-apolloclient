@@ -1,0 +1,24 @@
+.todo-container {
+  text-align: center;
+  width: 30%;
+  background-color: lightcyan;
+  margin: auto;
+  padding: 20px;
+  button {
+    margin-left: 5px;
+  }
+}
+
+.todo-items-container {
+  margin: auto;
+  margin-top: 20px;
+  width: 90%;
+  background-color: lightgray;
+}
+
+.todo-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20px;
+}

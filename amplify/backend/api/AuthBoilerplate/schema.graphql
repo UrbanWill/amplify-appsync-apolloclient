@@ -1,10 +1,9 @@
-type User
+type Todo
 @model
 @auth(
   rules: [{ allow: owner, queries: null, mutations: [create, update, delete] }]
 ) {
   id: ID!
-  name: String!
-  gender: String
-  age: Int
+  todo: String!
+  description: String
 }
